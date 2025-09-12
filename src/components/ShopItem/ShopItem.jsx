@@ -1,6 +1,9 @@
 import styles from './ShopItem.module.css';
+import { useState } from 'react';
 
 function ShopItem({ id, title, price, imageSrc, addToCart }) {
+  const [amount, setAmount] = useState(0);
+
   return (
     <div className={styles.card}>
       <span className={styles.title}>{title}</span>
@@ -12,20 +15,39 @@ function ShopItem({ id, title, price, imageSrc, addToCart }) {
         <input
           className={styles['amount-input']}
           type="number"
-          defaultValue={0}
+          value={amount}
+          onChange={(event) => {
+            const input = parseInt(event.target.value);
+
+            if (!input.isNan) {
+              setAmount(input);
+            }
+          }}
           min={0}
         />
-        <button type="button" className={styles['increment-btn']}>
+        <button
+          type="button"
+          className={styles['increment-btn']}
+          onClick={() => setAmount((prev) => prev + 1)}
+        >
           +
         </button>
-        <button type="button" className={styles['decrement-btn']}>
+        <button
+          type="button"
+          className={styles['decrement-btn']}
+          onClick={() => {
+            if (amount !== 0) {
+              setAmount((prev) => prev - 1);
+            }
+          }}
+        >
           -
         </button>
       </div>
       <button
         className={styles['add-to-cart-btn']}
         type="button"
-        onClick={() => addToCart(id)}
+        onClick={() => addToCart(id, amount)}
       >
         Add To Cart
       </button>
