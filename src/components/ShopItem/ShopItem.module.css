@@ -1,0 +1,95 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow:
+    /* Layer 1: Sharp, small shadow */
+    0 1px 2px rgba(0, 0, 0, 0.07),
+    /* Layer 2: Medium shadow */ 0 2px 4px rgba(0, 0, 0, 0.07),
+    /* Layer 3: Blurry, large shadow */ 0 4px 8px rgba(0, 0, 0, 0.07),
+    /* Layer 4: Extra large shadow */ 0 8px 16px rgba(0, 0, 0, 0.07),
+    /* Layer 5: Very large, soft shadow */ 0 16px 32px rgba(0, 0, 0, 0.07),
+    /* Layer 6: Final, ethereal shadow */ 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.image {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.price-label {
+  font-weight: bold;
+}
+
+.amount-section {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.amount-input {
+  padding: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  width: 5ch;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.increment-btn,
+.decrement-btn {
+  font-size: 2rem;
+  min-width: 2rem;
+  border: none;
+  padding: 0.3rem 1rem;
+  color: white;
+  transition: filter 0.3s;
+}
+
+.increment-btn:hover,
+.decrement-btn:hover {
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+
+.increment-btn {
+  background-color: #4caf50;
+}
+
+.decrement-btn {
+  background-color: #f44336;
+}
+
+.add-to-cart-btn {
+  background-color: #ffc107;
+  color: #212121;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.5s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ffa000;
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+    font-size: 3rem;
+  }
+  50% {
+    opacity: 0.5;
+    font-size: 2.8rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 3rem;
+  }
+}
+
+.h1 {
+  font-size: 7rem;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 200px;
+  animation: blink 3s infinite alternate;
+}
+
+.error {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.shop-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  width: 85%;
+  place-content: center;
+  margin: 0 auto;
+  gap: 2rem;
+  margin: 3rem auto;
+}
