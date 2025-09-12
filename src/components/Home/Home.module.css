@@ -1,0 +1,42 @@
+.h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.intro-text {
+  font-size: 2rem;
+  text-align: center;
+  opacity: 0.6;
+  margin: 4rem auto;
+}
+
+.images-container {
+  display: flex;
+  min-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.shop-redirect-text {
+  font-size: 2rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 2rem;
+  transition: transform 0.3s;
+  display: inline-block;
+  color: blueviolet;
+}
+
+.nav-link:hover {
+  transform: scale(1.2);
+}
+
+.nav-link:visited {
+  color: blueviolet;
+}
