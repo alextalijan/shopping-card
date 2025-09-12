@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Outlet, Link } from 'react-router-dom';
 
@@ -13,6 +13,8 @@ function App() {
       id,
       amount,
     };
+
+    if (amount === 0) return;
 
     for (const item of cart) {
       if (addedItem.id === item.id) {
@@ -39,36 +41,38 @@ function App() {
     setCart(cart.filter((item) => item.id !== id));
   }
 
-  fetch('https://fakestoreapi.com/products/')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          'Failed to load items from the shop. Please try again by refreshing the page.',
-        );
-      }
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products/')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            'Failed to load items from the shop. Please try again by refreshing the page.',
+          );
+        }
 
-      return response.json();
-    })
-    .then((data) => {
-      const items = [];
+        return response.json();
+      })
+      .then((data) => {
+        const items = [];
 
-      for (let i = 0; i < 10; i += 1) {
-        items.push({
-          id: data[i].id,
-          title: data[i].title,
-          price: data[i].price,
-          imageSrc: data[i].image,
-        });
-      }
+        for (let i = 0; i < 10; i += 1) {
+          items.push({
+            id: data[i].id,
+            title: data[i].title,
+            price: data[i].price,
+            imageSrc: data[i].image,
+          });
+        }
 
-      setShopItems(items);
-    })
-    .catch((error) => {
-      setShopError(error.message);
-    })
-    .finally(() => {
-      setLoadingShop(false);
-    });
+        setShopItems(items);
+      })
+      .catch((error) => {
+        setShopError(error.message);
+      })
+      .finally(() => {
+        setLoadingShop(false);
+      });
+  }, []);
 
   return (
     <>
