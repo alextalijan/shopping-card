@@ -8,9 +8,9 @@ function App() {
   const [loadingShop, setLoadingShop] = useState(true);
   const [shopError, setShopError] = useState(null);
 
-  function addToCart(item, amount) {
+  function addToCart(id, amount) {
     const addedItem = {
-      id: item.id,
+      id,
       amount,
     };
 
@@ -46,6 +46,8 @@ function App() {
           'Failed to load items from the shop. Please try again by refreshing the page.',
         );
       }
+
+      return response.json();
     })
     .then((data) => {
       const items = [];
