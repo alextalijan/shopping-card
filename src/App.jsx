@@ -76,22 +76,28 @@ function App() {
 
   return (
     <>
-      <header>
-        <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/cart">
-          <span>({cart.length})</span> Cart
+      <header className="header">
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
+        <Link className="nav-link" to="/shop">
+          Shop
+        </Link>
+        <Link className="nav-link" to="/cart">
+          Cart <span>({cart.length})</span>
         </Link>
       </header>
-      <Outlet
-        context={{
-          addToCart,
-          removeFromCart,
-          shopItems,
-          loadingShop,
-          shopError,
-        }}
-      />
+      <main>
+        <Outlet
+          context={{
+            addToCart,
+            removeFromCart,
+            shopItems,
+            loadingShop,
+            shopError,
+          }}
+        />
+      </main>
     </>
   );
 }
