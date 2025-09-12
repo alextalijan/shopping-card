@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom';
 import ShopItem from '../ShopItem/ShopItem';
 
 function Shop() {
-  const { shopItems, loadingShop, shopError } = useOutletContext();
+  const { shopItems, loadingShop, shopError, addToCart } = useOutletContext();
 
   return (
     <>
@@ -18,6 +18,7 @@ function Shop() {
               title={item.title}
               price={item.price}
               imageSrc={item.imageSrc}
+              addToCart={addToCart}
             />
           );
         })}
