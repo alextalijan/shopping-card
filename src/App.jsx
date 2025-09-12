@@ -8,8 +8,31 @@ function App() {
   const [loadingShop, setLoadingShop] = useState(true);
   const [shopError, setShopError] = useState(null);
 
-  function addToCart(item) {
-    setCart([...cart, item]);
+  function addToCart(item, amount) {
+    const addedItem = {
+      id: item.id,
+      amount,
+    };
+
+    for (const item of cart) {
+      if (addedItem.id === item.id) {
+        const newCart = cart.map((item) => {
+          if (item.id === addedItem.id) {
+            return {
+              id: addedItem.id,
+              amount: item.amount + addedItem.amount,
+            };
+          }
+
+          return item;
+        });
+
+        setCart(newCart);
+        return;
+      }
+    }
+
+    setCart([...cart, addedItem]);
   }
 
   function removeFromCart(id) {
