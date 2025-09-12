@@ -32,7 +32,6 @@ function App() {
           id: data[i].id,
           title: data[i].title,
           price: data[i].price,
-          description: data[i].description,
           imageSrc: data[i].image,
         });
       }
