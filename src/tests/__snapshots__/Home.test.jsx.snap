@@ -1,0 +1,77 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <a
+      class="nav-link"
+      data-discover="true"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="nav-link"
+      data-discover="true"
+      href="/shop"
+    >
+      Shop
+    </a>
+    <a
+      class="nav-link"
+      data-discover="true"
+      href="/cart"
+    >
+      Cart 
+      <span>
+        (
+        0
+        )
+      </span>
+    </a>
+  </header>
+  <main>
+    <h1
+      class="_h1_d6eec2"
+    >
+      Welcome to the All-Around Shop!
+    </h1>
+    <p
+      class="_intro-text_d6eec2"
+    >
+      Here you can buy anything from clothing to laptop bags.
+    </p>
+    <div
+      class="_images-container_d6eec2"
+    >
+      <img
+        alt=""
+        src="/public/shirt.png"
+      />
+      <img
+        alt=""
+        src="/public/laptop-bag.png"
+      />
+    </div>
+    <p
+      class="_shop-redirect-text_d6eec2"
+    >
+      Click on the
+       
+      <a
+        class="_nav-link_d6eec2"
+        data-discover="true"
+        data-testid="shop-link"
+        href="/shop"
+      >
+        SHOP
+      </a>
+       
+      to browse our store.
+       
+    </p>
+  </main>
+</div>
+`;

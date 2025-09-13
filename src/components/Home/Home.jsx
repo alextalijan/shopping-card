@@ -14,7 +14,7 @@ function Home() {
       </div>
       <p className={styles['shop-redirect-text']}>
         Click on the{' '}
-        <Link className={styles['nav-link']} to="/shop">
+        <Link className={styles['nav-link']} to="/shop" data-testid="shop-link">
           SHOP
         </Link>{' '}
         to browse our store.{' '}
