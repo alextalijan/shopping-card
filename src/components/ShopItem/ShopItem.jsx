@@ -1,7 +1,7 @@
 import styles from './ShopItem.module.css';
 import { useState } from 'react';
 
-function ShopItem({ id, title, price, imageSrc, addToCart }) {
+function ShopItem({ id, title, price, imageSrc, addToCart, setAnnouncer }) {
   const [amount, setAmount] = useState(0);
 
   return (
@@ -47,7 +47,16 @@ function ShopItem({ id, title, price, imageSrc, addToCart }) {
       <button
         className={styles['add-to-cart-btn']}
         type="button"
-        onClick={() => addToCart(id, title, imageSrc, price, amount)}
+        onClick={() => {
+          if (amount > 0) {
+            addToCart(id, title, imageSrc, price, amount);
+            setAnnouncer({
+              title: 'Success',
+              text: "You've added this item to your cart.",
+              type: 'good',
+            });
+          }
+        }}
       >
         Add To Cart
       </button>

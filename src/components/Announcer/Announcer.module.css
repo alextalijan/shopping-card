@@ -1,3 +1,18 @@
+@keyframes showHide {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .announcer {
   position: fixed;
   top: 50%;
@@ -10,6 +25,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  animation: showHide 4s;
 }
 
 .good {

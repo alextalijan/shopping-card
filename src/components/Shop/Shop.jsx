@@ -1,9 +1,12 @@
 import { useOutletContext } from 'react-router-dom';
 import ShopItem from '../ShopItem/ShopItem';
 import styles from './Shop.module.css';
+import Announcer from '../Announcer/Announcer';
+import { useState } from 'react';
 
 function Shop() {
   const { shopItems, loadingShop, shopError, addToCart } = useOutletContext();
+  const [announcer, setAnnouncer] = useState(null);
 
   return (
     <>
@@ -20,10 +23,19 @@ function Shop() {
               price={item.price}
               imageSrc={item.imageSrc}
               addToCart={addToCart}
+              setAnnouncer={setAnnouncer}
             />
           );
         })}
       </div>
+      {announcer && (
+        <Announcer
+          title={announcer.title}
+          text={announcer.text}
+          type={announcer.type}
+          onFinish={() => setAnnouncer(null)}
+        />
+      )}
     </>
   );
 }
