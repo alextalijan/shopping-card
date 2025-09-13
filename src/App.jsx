@@ -100,6 +100,7 @@ function App() {
             shopError,
             addToCart,
             cart,
+            setCart,
             removeFromCart,
           }}
         />

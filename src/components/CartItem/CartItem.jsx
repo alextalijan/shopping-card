@@ -1,6 +1,14 @@
 import styles from './CartItem.module.css';
 
-function CartItem({ title, imageSrc, price, amount, onClick }) {
+function CartItem({
+  id,
+  title,
+  imageSrc,
+  price,
+  amount,
+  onClick,
+  handleAmountChange,
+}) {
   return (
     <div className={styles.card}>
       <span className={styles.title}>{title}</span>
@@ -11,10 +19,18 @@ function CartItem({ title, imageSrc, price, amount, onClick }) {
       <span className={styles.price}>Price: ${price * amount}</span>
       <div className={styles['amount-section']}>
         <span className={styles.amount}>Amount: {amount}</span>
-        <button className={styles['increase-amount-btn']} type="button">
+        <button
+          className={styles['increase-amount-btn']}
+          type="button"
+          onClick={() => handleAmountChange('increment', id)}
+        >
           +
         </button>
-        <button className={styles['decrease-amount-btn']} type="button">
+        <button
+          className={styles['decrease-amount-btn']}
+          type="button"
+          onClick={() => handleAmountChange('decrement', id)}
+        >
           -
         </button>
       </div>
