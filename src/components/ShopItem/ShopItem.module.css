@@ -63,6 +63,7 @@ input::-webkit-inner-spin-button {
   padding: 0.3rem 1rem;
   color: white;
   transition: filter 0.3s;
+  border-radius: 0.8rem;
 }
 
 .increment-btn:hover,

@@ -8,12 +8,13 @@ function App() {
   const [loadingShop, setLoadingShop] = useState(true);
   const [shopError, setShopError] = useState(null);
 
-  function addToCart(id, title, price, amount) {
+  function addToCart(id, title, imageSrc, price, amount) {
     if (amount === 0) return;
 
     const addedItem = {
       id,
       title,
+      imageSrc,
       price,
       amount,
     };

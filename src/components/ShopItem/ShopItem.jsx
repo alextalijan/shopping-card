@@ -47,7 +47,7 @@ function ShopItem({ id, title, price, imageSrc, addToCart }) {
       <button
         className={styles['add-to-cart-btn']}
         type="button"
-        onClick={() => addToCart(id, title, price, amount)}
+        onClick={() => addToCart(id, title, imageSrc, price, amount)}
       >
         Add To Cart
       </button>
