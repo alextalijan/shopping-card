@@ -1,0 +1,19 @@
+.h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.cart-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+  max-width: 80%;
+  margin: 4rem auto;
+  gap: 2rem;
+  place-content: center;
+}
+
+.empty-cart-text {
+  font-size: 2.5rem;
+  text-align: center;
+}
