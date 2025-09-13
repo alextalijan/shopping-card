@@ -1,12 +1,23 @@
-function CartItem({ title, price, amount, onClick }) {
+import styles from './CartItem.module.css';
+
+function CartItem({ title, imageSrc, price, amount, onClick }) {
   return (
-    <div>
-      <span>{title}</span>
-      <button onClick={onClick}>x</button>
-      <span>${price * amount}</span>
-      <span>Amount: {amount}</span>
-      <button type="button">+</button>
-      <button type="button">-</button>
+    <div className={styles.card}>
+      <span className={styles.title}>{title}</span>
+      <button className={styles['remove-btn']} onClick={onClick}>
+        x
+      </button>
+      <img className={styles.image} src={imageSrc} alt="" />
+      <span className={styles.price}>Price: ${price * amount}</span>
+      <div className={styles['amount-section']}>
+        <span className={styles.amount}>Amount: {amount}</span>
+        <button className={styles['increase-amount-btn']} type="button">
+          +
+        </button>
+        <button className={styles['decrease-amount-btn']} type="button">
+          -
+        </button>
+      </div>
     </div>
   );
 }
