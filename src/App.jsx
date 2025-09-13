@@ -8,13 +8,15 @@ function App() {
   const [loadingShop, setLoadingShop] = useState(true);
   const [shopError, setShopError] = useState(null);
 
-  function addToCart(id, amount) {
+  function addToCart(id, title, price, amount) {
+    if (amount === 0) return;
+
     const addedItem = {
       id,
+      title,
+      price,
       amount,
     };
-
-    if (amount === 0) return;
 
     for (const item of cart) {
       if (addedItem.id === item.id) {
@@ -22,6 +24,8 @@ function App() {
           if (item.id === addedItem.id) {
             return {
               id: addedItem.id,
+              title: addedItem.title,
+              price: addedItem.price,
               amount: item.amount + addedItem.amount,
             };
           }
@@ -90,11 +94,12 @@ function App() {
       <main>
         <Outlet
           context={{
-            addToCart,
-            removeFromCart,
             shopItems,
             loadingShop,
             shopError,
+            addToCart,
+            cart,
+            removeFromCart,
           }}
         />
       </main>
