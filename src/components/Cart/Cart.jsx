@@ -10,16 +10,22 @@ function Cart() {
     let newCart;
 
     if (type === 'increment') {
-      newCart = [
-        ...cart.filter((cartItem) => cartItem.id !== id),
-        { ...item, amount: item.amount + 1 },
-      ];
+      newCart = cart.map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: item.amount + 1 };
+        }
+
+        return item;
+      });
     } else {
       if (item.amount > 1) {
-        newCart = [
-          ...cart.filter((cartItem) => cartItem.id !== id),
-          { ...item, amount: item.amount - 1 },
-        ];
+        newCart = cart.map((item) => {
+          if (item.id === id) {
+            return { ...item, amount: item.amount - 1 };
+          }
+
+          return item;
+        });
       } else {
         return;
       }
