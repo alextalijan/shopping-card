@@ -17,3 +17,32 @@
   font-size: 2.5rem;
   text-align: center;
 }
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.total-price {
+  font-size: 4rem;
+}
+
+.buy-btn {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(255, 235, 205);
+  transition-property: background-color, transform;
+  transition-duration: 0.5s;
+}
+
+.buy-btn:hover {
+  background-color: rgb(255, 220, 180);
+  cursor: pointer;
+  transform: scale(1.2);
+}
