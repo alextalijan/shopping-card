@@ -24,6 +24,7 @@ function ShopItem({ id, title, price, imageSrc, addToCart, setAnnouncer }) {
             }
           }}
           min={0}
+          data-testid="amount-input"
         />
         <button
           type="button"
