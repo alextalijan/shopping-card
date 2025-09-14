@@ -5,7 +5,7 @@ function ShopItem({ id, title, price, imageSrc, addToCart, setAnnouncer }) {
   const [amount, setAmount] = useState(0);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-testid="shop-item">
       <span className={styles.title}>{title}</span>
       <img src={imageSrc} alt="" className={styles.image} />
       <span className={styles.price}>
