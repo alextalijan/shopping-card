@@ -35,7 +35,7 @@ it('calls addToCart when the button is clicked', async () => {
   );
 
   // increase the amount
-  await user.click(screen.getByRole('button', { name: /incrment amount/i }));
+  await user.click(screen.getByRole('button', { name: /increment amount/i }));
 
   // now click add to cart
   await user.click(screen.getByRole('button', { name: /add to cart/i }));
