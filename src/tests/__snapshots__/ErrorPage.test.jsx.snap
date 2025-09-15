@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders 1`] = `
+<div>
+  <h1
+    class="_h1_955fbf"
+  >
+    Error: Page Not Found
+  </h1>
+  <p
+    class="_error-message_955fbf"
+    data-testid="error-text"
+  >
+    Make sure you've requested an existing page.
+  </p>
+  <p
+    class="_error-message_955fbf"
+    data-testid="error-text"
+  >
+    Click to go back to the
+     
+    <a
+      class="_nav-link_955fbf"
+      data-discover="true"
+      href="/"
+    >
+      home page
+    </a>
+    .
+  </p>
+  <img
+    alt=""
+    class="_error-img_955fbf"
+    src="/public/error.png"
+  />
+</div>
+`;

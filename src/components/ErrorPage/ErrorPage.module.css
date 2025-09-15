@@ -1,0 +1,33 @@
+.h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 8rem auto 3rem;
+}
+
+.error-message {
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: blue;
+}
+
+.error-img {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .h1 {
+    font-size: 3.5rem;
+  }
+
+  .error-message {
+    font-size: 1.7rem;
+  }
+}
