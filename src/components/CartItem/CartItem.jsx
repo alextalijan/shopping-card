@@ -12,7 +12,11 @@ function CartItem({
   return (
     <div className={styles.card} data-testid="cart-item">
       <span className={styles.title}>{title}</span>
-      <button className={styles['remove-btn']} onClick={onClick}>
+      <button
+        className={styles['remove-btn']}
+        onClick={onClick}
+        aria-label="Remove from cart"
+      >
         x
       </button>
       <img className={styles.image} src={imageSrc} alt="" />
