@@ -2,8 +2,6 @@ import { vi, it, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { screen, render } from '@testing-library/react';
-import App from '../App';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import ShopItem from '../components/ShopItem/ShopItem';
 
 it('renders', () => {
