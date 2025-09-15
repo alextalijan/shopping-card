@@ -35,7 +35,7 @@ it('calls addToCart when the button is clicked', async () => {
   );
 
   // increase the amount
-  await user.click(screen.getByRole('button', { name: '+' }));
+  await user.click(screen.getByRole('button', { name: /incrment amount/i }));
 
   // now click add to cart
   await user.click(screen.getByRole('button', { name: /add to cart/i }));
@@ -58,7 +58,7 @@ it('refuses to have number of items added to cart less than 0', async () => {
   );
 
   // decrease the amount
-  await user.click(screen.getByRole('button', { name: '-' }));
+  await user.click(screen.getByRole('button', { name: /decrement amount/i }));
 
   expect(screen.getByTestId('amount-input')).toHaveValue(0);
 });
@@ -80,10 +80,10 @@ it('lowers the amount to add to cart with decrement', async () => {
   const input = screen.getByTestId('amount-input');
 
   // increase the amount
-  await user.click(screen.getByRole('button', { name: '+' }));
+  await user.click(screen.getByRole('button', { name: /increment amount/i }));
   expect(input).toHaveValue(1);
 
   // increase the amount
-  await user.click(screen.getByRole('button', { name: '-' }));
+  await user.click(screen.getByRole('button', { name: /decrement amount/i }));
   expect(input).toHaveValue(0);
 });

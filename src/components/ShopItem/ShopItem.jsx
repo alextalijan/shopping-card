@@ -29,6 +29,7 @@ function ShopItem({ id, title, price, imageSrc, addToCart, setAnnouncer }) {
         <button
           type="button"
           className={styles['increment-btn']}
+          aria-label="Increment amount"
           onClick={() => setAmount((prev) => prev + 1)}
         >
           +
@@ -36,6 +37,7 @@ function ShopItem({ id, title, price, imageSrc, addToCart, setAnnouncer }) {
         <button
           type="button"
           className={styles['decrement-btn']}
+          aria-label="Decrement amount"
           onClick={() => {
             if (amount !== 0) {
               setAmount((prev) => prev - 1);

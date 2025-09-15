@@ -10,7 +10,7 @@ function CartItem({
   handleAmountChange,
 }) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-testid="cart-item">
       <span className={styles.title}>{title}</span>
       <button className={styles['remove-btn']} onClick={onClick}>
         x
@@ -21,6 +21,7 @@ function CartItem({
         <span className={styles.amount}>Amount: {amount}</span>
         <button
           className={styles['increase-amount-btn']}
+          aria-label="Increase amount"
           type="button"
           onClick={() => handleAmountChange('increment', id)}
         >
@@ -28,6 +29,7 @@ function CartItem({
         </button>
         <button
           className={styles['decrease-amount-btn']}
+          aria-label="Decrease amount"
           type="button"
           onClick={() => handleAmountChange('decrement', id)}
         >
