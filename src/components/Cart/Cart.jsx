@@ -58,22 +58,22 @@ function Cart() {
             You have no items in the cart.
           </p>
         )}
-        {cart.length > 0 && (
-          <div className={styles.checkout}>
-            <span className={styles['total-price']}>
-              TOTAL: $
-              {cart
-                .reduce((current, item) => {
-                  return item.price * item.amount + current;
-                }, 0)
-                .toFixed(1)}
-            </span>
-            <button type="button" className={styles['buy-btn']}>
-              Buy
-            </button>
-          </div>
-        )}
       </div>
+      {cart.length > 0 && (
+        <div className={styles.checkout}>
+          <span className={styles['total-price']}>
+            TOTAL: $
+            {cart
+              .reduce((current, item) => {
+                return item.price * item.amount + current;
+              }, 0)
+              .toFixed(1)}
+          </span>
+          <button type="button" className={styles['buy-btn']}>
+            Buy
+          </button>
+        </div>
+      )}
     </>
   );
 }
